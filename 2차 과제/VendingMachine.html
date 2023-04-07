@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자판기</title>
+  <style>
+    .content-box {
+        border: 1px solid black;
+        width: 400px;
+        height: 600px;
+    }
+    .mypick {
+        text-align: center;
+        font-size: 40px;
+    }
+    .list {
+        text-align: center;
+    }
+    .beverage {
+        text-align: center;
+        width: 130px;
+        height: 150px;
+    }
+  </style>
+</head>
+<body>
+    <div class="content-box">
+        <h1>자판기</h1>
+        <div class="list">
+            <img class="beverage" src="./media/coke.png">
+            <img class="beverage" src="./media/water.png"><br>
+            코카콜라 1000원  삼다수 500원<br>
+            <img class="beverage" src="./media/korean.png">
+            <img class="beverage" src="./media/tea.png"><br>
+            비락식혜 1500원  데자와 2000원<br>
+        </div>
+        <div>
+            투입금액 : <input type="text">
+            <select name="pick" id="pick">
+                <option value="0">상품을 선택하세요.</option>
+                <option value="1000원">코카콜라</option>
+                <option value="500원">삼다수</option>
+                <option value="1500원">비락식혜</option>
+                <option value="2000원">데자와</option>
+            </select>
+        </div>
+        <br><br>
+        <div class="mypick">
+            상품 & 거스름돈
+        </div>
+    </div>
+</body>
+</html>
