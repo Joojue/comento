@@ -1,0 +1,80 @@
+.container {
+    text-align: center;
+    width: 1000px;
+    height: 800px;
+}
+.watch {
+    width: 400px;
+    height: 600px;
+    background-color: rgb(33, 33, 33);
+}
+.battery {
+    width: auto;
+    height: 50px;
+    border: 1px solid white;
+    line-height: 50px;
+}
+.screen {
+    width: auto;
+    height: 180px;
+    border: 1px solid white;
+    text-align: center;
+    line-height: 160px;
+}
+.alram-add {
+    width: auto;
+    border: 1px solid white;
+}
+.alram-function {
+    width: auto;
+    height: 100px;
+    border: 1px solid white;
+}
+.alram-list {
+    width: auto;
+    height: 240px;
+    border: 1px solid white;
+}
+.battery-add {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 15px;
+    text-align: left;
+}
+.battery-condition {
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 10px;
+    text-align: right;
+}
+.alram {
+    width: auto;
+    height: 70px;
+    border: 1px solid white;
+    line-height: 70px;
+}
+.main-font {
+    font-size: 20px;
+    color: white;
+}
+.screen-font {
+    font-size: 90px;
+    color: white;
+}
+input[type="time"] {
+    font-size: 20px;
+    text-align: center;
+    width: 200px;
+}
+.button {
+    display: inline-block;
+    background-color: rgb(33, 33, 33);
+    color: white;
+    border: 1px solid white;
+    font-size: 20px;
+}
+.alram-time {
+    display: block;
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
