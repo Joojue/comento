@@ -1,0 +1,94 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <link href="calculator.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="calculator-title">
+                한 자리 수 계산기
+            </div>
+            <div class="calculator-display" id="calculator-display">
+                0
+            </div>
+            <div class="result" id="result">
+                <!--결과값 표시-->
+            </div>
+            <div class="pad">
+                <table>
+                    <tr>
+                        <td onclick="Clear()" colspan="2">AC</td>
+                        <td onclick="Calculate()" colspan="2">ENTER</td>
+                    </tr>
+                    <tr>
+                        <td onclick="Write()">7</td>
+                        <td onclick="Write()">8</td>
+                        <td onclick="Write()">9</td>
+                        <td onclick="Write()">+</td>
+                    </tr>
+                    <tr>
+                        <td onclick="Write()">4</td>
+                        <td onclick="Write()">5</td>
+                        <td onclick="Write()">6</td>
+                        <td onclick="Write()">-</td>
+                    </tr>
+                    <tr>
+                        <td onclick="Write()">1</td>
+                        <td onclick="Write()">2</td>
+                        <td onclick="Write()">3</td>
+                        <td onclick="Write()">*</td>
+                    </tr>
+                    <tr>
+                        <td onclick="Write()" colspan="3">0</td>
+                        <td onclick="Write()">/</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    selected = [
+
+    ]
+    function Clear() {
+        document.getElementById("calculator-display").innerText
+        = "0";
+        document.getElementById("result").innerText
+        = "";
+        selected.length = 0
+    }
+    function Write() {
+        const target = event.target;
+        const content = target.textContent;
+        selected.push(content)
+        const selectnum = selected.join("");
+        document.getElementById("calculator-display").innerHTML
+        = selectnum;
+    }
+    function Calculate() {
+        n1 = selected[0];
+        operator = selected[1];
+        n2 = selected[2];
+        let result = 0;
+        if(operator === '+') {
+            result = Number(n1) + Number(n2);
+        }
+        else if(operator === '-') {
+            result = Number(n1) - Number(n2);
+        }
+        else if(operator === '*') {
+            result = Number(n1) * Number(n2);
+        }
+        else if(operator === '/') {
+            result = Number(n1) / Number(n2);
+        }
+        return document.getElementById("result").innerHTML
+        = String(result);
+    }
+</script>
+</html>
