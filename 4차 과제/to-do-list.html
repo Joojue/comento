@@ -1,0 +1,111 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="to-do-list.css" type="text/css" rel="stylesheet">
+    <title>할 일 목록</title>
+</head>
+<body>
+    <div class="container">
+        <div class="display-box">
+            <div class="box-title">
+                할 일 목록
+            </div>
+            <div class="box-list">
+                <table class="box-table" id="box-table">
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 60%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead class="table-head">
+                        <tr>
+                            <td scope="col">선택</td>
+                            <td scope="col">내용</td>
+                            <td scope="col">상태</td>
+                        </tr>
+                    </thead>
+                <tbody class="table-body">
+                    <!--할 일 표시-->  
+                </tbody>
+                </table>
+            </div>
+            <div class="box-button">
+                <button class="complete" value="complete">완료</button>
+                <button class="clear" value="clear">삭제</button>
+            </div>
+            <div class="box-add">
+                <input type="text" class="will-add" id="content">
+                <button class="Add" value="add">할 일 추가</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let content = document.getElementById('content');
+    let buttons = document.querySelectorAll('button');
+    let complete = document.querySelector('.complete');
+    let clear = document.querySelector('.clear');
+    let add = document.querySelector('.Add');
+
+    function ConditionChange() {
+        let table = document.getElementById('box-table');
+        for (i=1; i<table.rows.length; i++) {
+            var radio = table.rows[i].cells[0].childNodes[0];
+
+            if(radio.checked) {
+                table.rows[i].cells[2].innerText
+                = "O";
+                radio.checked = false;
+            }
+        }    
+    }
+
+    function DeleteList() {
+        let table = document.getElementById('box-table');
+        for (i=1; i<table.rows.length; i++) {
+            var radio = table.rows[i].cells[0].childNodes[0].checked;
+
+            if(radio) {
+                table.deleteRow(i);
+                i--;
+            }
+        }
+
+    }
+
+    function AddRow(content) {
+        let table = document.getElementById('box-table');
+
+        let newRow = table.insertRow();
+
+        let newCell1 = newRow.insertCell(0);
+        let newCell2 = newRow.insertCell(1);
+        let newCell3 = newRow.insertCell(2);
+
+        newCell1.innerHTML = '<input type=radio>';
+        newCell2.innerText = content;
+        newCell3.innerText = 'X';
+
+    }
+
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (button.value === 'complete') {
+                ConditionChange();
+            }
+            else if (button.value === 'clear') {
+                DeleteList()
+            }
+            else if (button.value === 'add') {
+                AddRow(content.value);
+                content.value
+                = "";
+            }
+        });
+    });
+    
+</script>
+</html>

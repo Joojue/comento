@@ -1,0 +1,63 @@
+@charset "utf-8";
+.display-box {
+    text-align: center;
+    width: 400px;
+    height: auto;
+    border: 1px solid black;
+}
+.box-title {
+    border: 1px solid black;
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+    font-size: 35px;
+}
+.box-list {
+    overflow: auto;
+    width: auto;
+    height: 300px;
+    border: 1px solid black;
+}
+.box-table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 400px;
+}
+.table-head {
+    font-size: 12px;
+}
+td {
+    border: 1px solid black;
+}
+.box-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+}
+.complete {
+    width: 120px;
+    height: 30px;
+    margin-right: 15px;
+}
+.clear {
+    width: 120px;
+    height: 30px;
+    margin-left: 15px;
+}
+.box-add {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+}
+.will-add {
+    display: inline-block;
+    text-align: center;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+.Add {
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+}
